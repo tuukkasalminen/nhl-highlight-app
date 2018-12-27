@@ -1,0 +1,107 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 15vmin;
+}
+
+.App-header {
+  min-height: 10vh;
+  display: flex;
+  flex-direction: row;
+  align-items: baseline; 
+  font-size: calc(25px + 2vmin);
+  font-family: 'Fjalla One', sans-serif;
+  color: gray;
+}
+
+.App-header p {
+  margin-left: 15%;
+  margin-right: 2%;
+  margin-bottom: 0.5em;
+}
+
+.date {
+  color: gray;
+  font-size: calc(12px + 2vmin);
+  font-family: 'Oswald', sans-serif;
+}
+
+.teamLogo {
+  width: 2em;
+  height: 2em;
+}
+
+.game:hover {
+  transform: scale(1.2);
+ }
+
+ .game {
+   border-style: inset;
+   border-radius: 15px;
+   margin: 1em 1em 1em 1em;
+   transition: transform .2s;
+ }
+
+ .team {
+   display: flex;
+   flex-direction: row;
+   justify-content: space-around;
+   margin-top: 0.5em;
+ }
+
+.container {
+  width: 70%;
+}
+
+.row {
+  justify-content: space-around;
+}
+
+.videoContainer {
+  width: 100%;
+}
+
+.close {
+  margin-bottom: 10px;
+  color: darkgray;
+}
+
+.boxScore {
+  margin-bottom: 10px;
+  font-size: calc(5px + 2vmin);
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-weight: 700;
+  position: absolute; 
+  padding: 5px;
+}
+
+.boxScore a {
+  color: #ccc;
+  text-decoration: none;
+  }
+  
+  a:hover {
+    color: #000;
+  }
+
+hr {
+  display: block;
+  height: 2px;
+  border: 0;
+  border-top: 2px solid #ccc;
+  margin: 0,5em 0;
+  padding: 0;
+  width: 90%;
+}
+
+.row hr {
+  width: 100%;
+}
+
+.copyright {
+  font-size: calc(2px + 1.2vmin);
+  margin-top: 3em;
+  color: #ccc;
+}
