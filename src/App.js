@@ -37,7 +37,7 @@ async componentDidMount () {
    this.setState({games: games.data.dates[0].games})
   }
   
-  //console.log(this.state.games, 'games')
+  console.log(this.state.games, 'games')
 }
 
 render() {

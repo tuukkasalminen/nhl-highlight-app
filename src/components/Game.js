@@ -21,7 +21,11 @@ class Game extends React.Component {
                     </div>
                     <div className="close" onClick={this.expand}>X</div>
                     <div className="embed-responsive embed-responsive-16by9">  
-                        <iframe className="embed-responsive-item" title="recap" src={this.props.game.content.media.epg[3].items[0].playbacks[9].url} allowFullScreen ></iframe> 
+                        <iframe className="embed-responsive-item" title="recap" src={
+                            window.innerWidth < 700 ? 
+                            this.props.game.content.media.epg[3].items[0].playbacks[7].url :
+                            this.props.game.content.media.epg[3].items[0].playbacks[9].url} 
+                            allowFullScreen ></iframe> 
                     </div>
                 </div>
             )
