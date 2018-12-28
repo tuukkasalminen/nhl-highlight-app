@@ -23,8 +23,8 @@ class Game extends React.Component {
                     <div className="embed-responsive embed-responsive-16by9">  
                         <iframe className="embed-responsive-item" title="recap" src={
                             window.innerWidth < 700 ? 
-                            this.props.game.content.media.epg[3].items[0].playbacks[7].url :
-                            this.props.game.content.media.epg[3].items[0].playbacks[9].url} 
+                            this.props.game.content.media.epg[3].items[0].playbacks[8].url.slice(5) :
+                            this.props.game.content.media.epg[3].items[0].playbacks[9].url.slice(5)} 
                             allowFullScreen ></iframe> 
                     </div>
                 </div>
