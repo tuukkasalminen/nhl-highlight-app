@@ -27,15 +27,15 @@ async componentDidMount () {
   //get schedule/games from api
   const games = await gameService.getGames(date)
   //only show games if all games are finished (and prevent error if there arent any games)
-  const finished = []
+/*   const finished = []
   games.data.dates[0].games.forEach(game => {
     if(game.status.abstractGameState === 'Final') {
       finished.push(game.status.abstractGameState)
     }
   })
-  if (games.data.dates[0].games.length === finished.length) {
+  if (games.data.dates[0].games.length === finished.length) { */
    this.setState({games: games.data.dates[0].games})
-  }
+  /* } */
   
   console.log(this.state.games, 'games')
 }
@@ -48,10 +48,13 @@ render() {
       <div className="App">
       <hr />
         <header className="App-header">
-        <p>NHL HIGHLIGHTS</p>
+        <p>HOCKEY RECAPS</p>
           <img src={require(`./logos/NHL.png`)} className="App-logo" alt="logo" />
         </header>
         <hr />
+{/*             <div className="info">
+              Click here for help
+            </div> */}
           <div className="container">
             <div className="row">
             <div className="date">{this.state.date}</div>
