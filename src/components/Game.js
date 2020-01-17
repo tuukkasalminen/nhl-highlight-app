@@ -7,9 +7,9 @@ class Game extends React.Component {
         this.state = {
             expanded: false,
             disabled: true,
-            selected: 'recap',
+            selected: 'recap'/* ,
             mobile: false,
-            mobileSupportOn: false
+            mobileSupportOn: false */
         }
     }
 
@@ -17,9 +17,9 @@ class Game extends React.Component {
         if(this.props.game.content.media.epg[3].items.length)  {
             this.setState({disabled: false})
         }
-        if(window.innerWidth < 700) {
+/*         if(window.innerWidth < 700) {
             this.setState({mobile: true})
-        } 
+        }  */
     }
      //toggle videoplayer on click
     expand = () => {
@@ -28,8 +28,6 @@ class Game extends React.Component {
     }
 
     render(){
-        console.log('mobile',this.state.mobile)
-        console.log('mobilesupport',this.state.mobileSupportOn)
         if(!this.state.disabled && this.state.expanded) {
             return(
                 <div className="videoContainer">
@@ -54,19 +52,19 @@ class Game extends React.Component {
                     </div>
                     <div className="embed-responsive embed-responsive-16by9">  
 
-                        {this.state.selected === 'recap' &&
-/*                         (this.state.mobileSupportOn ?
+                         {this.state.selected === 'recap' &&
+                         /*(this.state.mobileSupportOn ?
                             <video className="embed-responsive-item" controls>
-                                <source type="video/mp4" src={this.props.game.content.media.epg[3].items[0].playbacks[8].url.slice(5)} />
+                                <source type="video/mp4" src={this.props.game.content.media.epg[3].items[0].playbacks[2].url} />
                             </video>
-                        : */
+                        :   */
                             <video className="embed-responsive-item" controls>
-                                <source type="video/mp4" src={this.props.game.content.media.epg[3].items[0].playbacks[9].url.slice(5)} />
-                            </video>} 
+                                <source type="video/mp4" src={this.props.game.content.media.epg[3].items[0].playbacks[3].url} />
+                         </video>}
 
                         {this.state.selected === 'extended' &&
                         <video className="embed-responsive-item" controls>
-                            <source type="video/mp4" src={this.props.game.content.media.epg[2].items[0].playbacks[9].url.slice(5)} />
+                            <source type="video/mp4" src={this.props.game.content.media.epg[2].items[0].playbacks[3].url} />
                         </video>} 
                     </div>
                 </div>
