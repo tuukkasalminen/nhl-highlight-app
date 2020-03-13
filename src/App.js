@@ -17,14 +17,26 @@ class App extends Component {
     // Get yesterdays date to get the right content from api
     const yesterday = new Date();
     yesterday.setDate(yesterday.getUTCDate() - 1);
-    const date = `${yesterday.getFullYear()}-${yesterday.getMonth() + 1}-${yesterday.getDate()}`;
 
-    // Get the right date form to be shown
-    const showDate = `${yesterday.getDate()}/${yesterday.getMonth() + 1}/${yesterday.getFullYear()}`;
-    this.setState({ date: showDate });
+    // Get the date in right format
 
-    // get schedule/games from api
-    const games = await gameService.getGames(date);
+
+    /**
+     * Would normally get games from todays date
+     *
+     * As NHL-games are cancelled, a constant date (10.3.2020) is used
+     * to get a sample of a working app
+     *
+     * const showDate = `${yesterday.getDate()}/${yesterday.getMonth() + 1}/${yesterday.getFullYear()}`;
+     * this.setState({ date: showDate });
+     *
+     * const date = `${yesterday.getFullYear()}-${yesterday.getMonth() + 1}-${yesterday.getDate()}`;
+     * const games = await gameService.getGames(date);
+     */
+
+    this.setState({ date: '10/3/2020' });
+
+    const games = await gameService.getGames('2020-3-10');
     this.setState({ games: games.data.dates[0].games });
   }
 
